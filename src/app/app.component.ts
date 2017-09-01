@@ -1,28 +1,30 @@
+import { AboutPage } from './../pages/about/about';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { ObjectivesListPage } from '../pages/objectives-list/objectives-list';
 
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class ObjectivesApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, icon: string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home', icon:'home', component: HomePage },
+      { title: 'Mes objectifs', icon:'done-all',component: ObjectivesListPage },
+      { title: 'À Propos', icon:'information-circle',component: AboutPage }
     ];
 
   }

@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Mes Objectifs</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-card *ngFor="let item of items" (click)="itemTapped($event, item)">
+            <ion-card-header>
+                {{item.title}}
+            </ion-card-header>
+            <ion-card-content>
+                {{item.description}}
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+    <ion-fab right bottom>
+        <button ion-fab><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+    <div *ngIf="selectedItem" padding>
+        You navigated here from <b>{{selectedItem.title}}</b>
+    </div>
+</ion-content>

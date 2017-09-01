@@ -1,29 +1,36 @@
+import { ObjectiveDetailPage } from './../pages/objective-detail/objective-detail';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { MyApp } from './app.component';
+import { ObjectivesApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { ObjectivesListPage } from './../pages/objectives-list/objectives-list';
+import { AboutPage } from '../pages/about/about';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-    MyApp,
+    ObjectivesApp,
     HomePage,
-    ListPage
+    ObjectivesListPage,
+    AboutPage,
+    ObjectiveDetailPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(ObjectivesApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    ObjectivesApp,
     HomePage,
-    ListPage
+    ObjectivesListPage,
+    AboutPage,
+    ObjectiveDetailPage
   ],
   providers: [
     StatusBar,
