@@ -17,14 +17,17 @@
             <ion-card-content>
                 {{item.description}}
             </ion-card-content>
+
+            <button ion-button (click)="deleteObjective($event,item)">
+                    <ion-icon name="trash"></ion-icon>
+            </button>
+
         </ion-card>
     </ion-list>
 
     <ion-fab right bottom>
-        <button ion-fab><ion-icon name="add"></ion-icon></button>
+        <button ion-fab (click)="addObjective()"><ion-icon name="add"></ion-icon></button>
+
     </ion-fab>
 
-    <div *ngIf="selectedItem" padding>
-        You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
 </ion-content>

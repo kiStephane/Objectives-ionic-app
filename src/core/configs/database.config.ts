@@ -1,0 +1,33 @@
+import {
+    CordovaSqliteConnector,
+    CordovaSqliteConnectorConfiguration,
+    NgDbHelperModuleConfig,
+} from 'ng-db-helper';
+  
+  // Create a function that build the module configuration
+  export function getDbHelperModuleConfiguration(): NgDbHelperModuleConfig {
+    // This configuration is for CordovaSqliteConnector
+    const connectorConfig = new CordovaSqliteConnectorConfiguration();
+  
+    // you could customize configuration here but you may not need to do that
+    // See connectors part to check possibilities and behaviour
+  
+    // create the cordova-sqlite-storage connector, other connectors are
+    // Available, see connectors part to find more browser/device support
+    const connector = new CordovaSqliteConnector(connectorConfig);
+  
+    // create the module configuration instance
+    const config = new NgDbHelperModuleConfig();
+    
+    // Default module connectors are model migration managers too. you
+    // can override migration behaviour from connector's configurations
+    config.modelMigration = connector;
+    config.queryConnector = connector;
+  
+    // setup the version of your data model, it will enable migration script
+    // to prevent developpement issues due to import optimization, a minor
+    // version is automatically incremented. See more configuration part to
+    // learn more.
+    config.version = '1.0.0';
+    return config;
+  }

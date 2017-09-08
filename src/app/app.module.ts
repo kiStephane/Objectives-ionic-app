@@ -1,16 +1,14 @@
-import { ObjectiveDetailPage } from './../pages/objective-detail/objective-detail';
-
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+/*  */import { ErrorHandler, NgModule } from '@angular/core';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { ObjectivesApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ObjectivesListPage } from './../pages/objectives-list/objectives-list';
 import { AboutPage } from '../pages/about/about';
-
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { HomePage } from '../pages/home/home';
+import { ObjectiveDetailPage } from './../pages/objective-detail/objective-detail';
+import { ObjectivesListPage } from './../pages/objectives-list/objectives-list';
+import { SharedModule } from './../shared/shared.module';
+import { ObjectivesApp } from './app.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ObjectiveDetailPage
   ],
   imports: [
-    BrowserModule,
     IonicModule.forRoot(ObjectivesApp),
+    SharedModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

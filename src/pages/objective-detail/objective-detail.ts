@@ -1,4 +1,5 @@
-import { Objective } from '../../models/objective';
+import { Objective } from './../../core/models/objective';
+
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
